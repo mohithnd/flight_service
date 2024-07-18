@@ -45,6 +45,36 @@ module.exports = {
         createdAt: new Date(2022, 8, 5),
         updatedAt: new Date(2024, 2, 1),
       },
+      {
+        modelNumber: "Airbus A320",
+        capacity: 180,
+        createdAt: new Date(2021, 6, 20),
+        updatedAt: new Date(2023, 11, 15),
+      },
+      {
+        modelNumber: "Boeing 737 MAX",
+        capacity: 230,
+        createdAt: new Date(2023, 1, 8),
+        updatedAt: new Date(2024, 4, 30),
+      },
+      {
+        modelNumber: "Cessna Citation CJ4",
+        capacity: 10,
+        createdAt: new Date(2022, 3, 17),
+        updatedAt: new Date(2023, 10, 5),
+      },
+      {
+        modelNumber: "Airbus A350",
+        capacity: 350,
+        createdAt: new Date(2021, 9, 12),
+        updatedAt: new Date(2024, 1, 28),
+      },
+      {
+        modelNumber: "Embraer E190",
+        capacity: 114,
+        createdAt: new Date(2023, 5, 22),
+        updatedAt: new Date(2024, 6, 10),
+      },
     ]);
   },
 
@@ -55,11 +85,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete("Airplanes", {
-      [Op.or]: [
-        { modelNumber: "Boeing 787 Dreamliner" },
-        { modelNumber: "Embraer E175" },
-      ],
-    });
+    await queryInterface.bulkDelete("Airplanes", null, {});
   },
 };
