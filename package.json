@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-express-starter-template",
+  "name": "flight_service",
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
@@ -14,9 +14,9 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "http-status-codes": "^2.3.0",
-    "mysql2": "^3.10.2",
+    "mysql2": "^3.10.3",
     "sequelize": "^6.37.3",
-    "winston": "^3.13.0"
+    "winston": "^3.13.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.4",
