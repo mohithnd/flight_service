@@ -17,6 +17,12 @@ class CrudRepository {
         id: id,
       },
     });
+    if (!response) {
+      throw new AppError(
+        "Not Able To Find The Resource",
+        StatusCodes.NOT_FOUND
+      );
+    }
     return response;
   }
 
