@@ -14,6 +14,19 @@ const validateCreateRequest = (req, res, next) => {
   next();
 };
 
+const validateUpdateRequest = (req, res, next) => {
+  if (!("capacity" in req.body)) {
+    ErrorResponse.error = new AppError(
+      "Capacity Not Found In The Incoming Request",
+      StatusCodes.BAD_REQUEST
+    );
+    return res.status(StatusCodes.BAD_REQUEST).json(ErrorResponse);
+  }
+
+  next();
+};
+
 module.exports = {
   validateCreateRequest,
+  validateUpdateRequest,
 };

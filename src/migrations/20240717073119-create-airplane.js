@@ -22,6 +22,7 @@ module.exports = {
         defaultValue: 0,
         validate: {
           max: 1000,
+          isNumeric: true,
         },
       },
       createdAt: {
