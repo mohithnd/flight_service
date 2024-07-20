@@ -6,10 +6,16 @@ const router = express.Router();
 
 router.post(
   "/",
-  CityMiddlewares.validateCreateRequest,
+  CityMiddlewares.validateCreateAndUpdateRequest,
   CityController.createCity
 );
 
 router.delete("/:id", CityController.destroyCity);
+
+router.patch(
+  "/:id",
+  CityMiddlewares.validateCreateAndUpdateRequest,
+  CityController.updateCity
+);
 
 module.exports = router;

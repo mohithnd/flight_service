@@ -2,7 +2,7 @@ const { StatusCodes } = require("http-status-codes");
 const { ErrorResponse } = require("../utils/common");
 const { AppError } = require("../utils/errors");
 
-const validateCreateRequest = (req, res, next) => {
+const validateCreateAndUpdateRequest = (req, res, next) => {
   if (!req.body.name) {
     ErrorResponse.error = new AppError(
       "City Name Not Found In The Incoming Request",
@@ -15,5 +15,5 @@ const validateCreateRequest = (req, res, next) => {
 };
 
 module.exports = {
-  validateCreateRequest,
+  validateCreateAndUpdateRequest,
 };
