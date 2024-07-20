@@ -1,0 +1,19 @@
+const { StatusCodes } = require("http-status-codes");
+const { ErrorResponse } = require("../utils/common");
+const { AppError } = require("../utils/errors");
+
+const validateCreateRequest = (req, res, next) => {
+  if (!req.body.name) {
+    ErrorResponse.error = new AppError(
+      "City Name Not Found In The Incoming Request",
+      StatusCodes.BAD_REQUEST
+    );
+    return res.status(StatusCodes.BAD_REQUEST).json(ErrorResponse);
+  }
+
+  next();
+};
+
+module.exports = {
+  validateCreateRequest,
+};
